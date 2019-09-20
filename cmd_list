@@ -1,0 +1,2209 @@
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1
+$ git init
+Initialized empty Git repository in F:/devops-trainning/day1/.git/
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ git add *
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ git commit -m '1st commit'
+[master (root-commit) 1a394fc] 1st commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Hello.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ git remote add origin https://github.com/rajeshistrac/day_1.git
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 206 bytes | 206.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/rajeshistrac/day_1.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ ls -al !/.ssh
+bash: !/.ssh: event not found
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ ssh-keygen -t rsa -C "rajesh.istrac@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Administrator/.ssh/id_rsa):
+Created directory '/c/Users/Administrator/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Administrator/.ssh/id_rsa.
+Your public key has been saved in /c/Users/Administrator/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:2H1v8q8DUMR1vGUsSHJOVgaU3NiaAImZ2cehRaHi1WY rajesh.istrac@gmail.com
+The key's randomart image is:
++---[RSA 3072]----+
+|       *.=*OOX+o.|
+|      = o=+*B.+.=|
+|      . +.Eo.o oo|
+|     . = +. o  . |
+|      o S ...    |
+|           ...   |
+|            ..o  |
+|             +.  |
+|              o+.|
++----[SHA256]-----+
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ ls -al
+total 8
+drwxr-xr-x 1 Administrator 197121 0 Sep 20 09:49 ./
+drwxr-xr-x 1 Administrator 197121 0 Sep 20 09:48 ../
+drwxr-xr-x 1 Administrator 197121 0 Sep 20 09:49 .git/
+-rw-r--r-- 1 Administrator 197121 0 Sep 20 09:49 Hello.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ ls -al ~/.ssh
+total 13
+drwxr-xr-x 1 Administrator 197121    0 Sep 20 09:52 ./
+drwxr-xr-x 1 Administrator 197121    0 Sep 20 09:52 ../
+-rw-r--r-- 1 Administrator 197121 2610 Sep 20 09:52 id_rsa
+-rw-r--r-- 1 Administrator 197121  577 Sep 20 09:52 id_rsa.pub
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ eval $(ssh-agent -s)
+Agent pid 1058
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ ssh-add ~/.ssh/id_rsa
+Identity added: /c/Users/Administrator/.ssh/id_rsa (rajesh.istrac@gmail.com)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ ssh-add ~/.ssh/id_rsa.pub
+Error loading key "/c/Users/Administrator/.ssh/id_rsa.pub": invalid format
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ ssh-remove ~/.ssh/id_rsa
+bash: ssh-remove: command not found
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ ssh-rem ~/.ssh/id_rsa
+bash: ssh-rem: command not found
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ ssh-del ~/.ssh/id_rsa
+bash: ssh-del: command not found
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ ssh-a
+ssh-add.exe    ssh-agent.exe
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ ssh-add ~/.ssh/id_rsa.pub
+Error loading key "/c/Users/Administrator/.ssh/id_rsa.pub": invalid format
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ more ~/.ssh/id_rsa.pub
+bash: more: command not found
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD0/6EstYfhlHuQ0p40VRyezEQIUYVreUXOG5fL/m7xqWZJfUrIVqWKDm/OLTbTdZMxTzLNnFIQzPhWtXegK/bySQ6HmihS5h2R0XdyOSgokBClw6dUI3HnwygQcGf+irm4DE2K7b38Q2qp3qhqTRlZrKrj5VlwYBbsMUfi6/ewqnUPbwm7rfWXosalnlWOaoFXSHtZ1BzT678TXARjR2MCbkxSA/u1OrH2uTkzhQ/9vsM4oKodBx+045ZL6iG+s/gTMysJ+gLvaCSD9jG1t0egBkx1Imm+2fiaLQZ3FnNil4wdS3n8TjwjA7CncNbLBMm+tG7ESpKuC/VL0vGWhm2QxBKrZeDSgDPGBssS9+r94MJDvjEupjR1oWTPj4w5TvNUPEXjb0a5sZ0fngpgl272umdI05Ok8MlxC0ILhK2wLYLjQr2Js1p1aMblNUgunkX3UIX+xctb+BIL/UU3n3V6P4FGdICk3rJUIEFRkkGV3j8TopF9szNPqAKruO9h2Uc= rajesh.istrac@gmail.com
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ touch f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ git add f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ git commit -m 'adding f1'
+[master 3788925] adding f1
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 237 bytes | 237.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0)
+To https://github.com/rajeshistrac/day_1.git
+   1a394fc..3788925  master -> master
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ git commit -m 'adding f1'
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ git commit -m 'updating f1'
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ git push origin master
+Everything up-to-date
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ git pull git@github.com:rajeshistrac/day_1.git
+The authenticity of host 'github.com (13.234.210.38)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com,13.234.210.38' (RSA) to the list of known hosts.
+From github.com:rajeshistrac/day_1
+ * branch            HEAD       -> FETCH_HEAD
+Already up to date.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ mkdir day2
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ cd day2
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1/day2 (master)
+$ git clone git@github.com:rajeshistrac/day_1.git
+Cloning into 'day_1'...
+Warning: Permanently added the RSA host key for IP address '13.234.176.102' to the list of known hosts.
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 5 (delta 0), reused 5 (delta 0), pack-reused 0
+Receiving objects: 100% (5/5), done.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1/day2 (master)
+$ ls
+day_1/
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1/day2 (master)
+$ ls day_1/
+f1  Hello.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1/day2 (master)
+$ mkdir branchdemo
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1/day2 (master)
+$ cd ..
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day1 (master)
+$ cd ..
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning
+$ pwd
+/f/devops-trainning
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning
+$ cd day2
+bash: cd: day2: No such file or directory
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning
+$ mkdir day2
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning
+$ cd day2
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2
+$ mkdir branchdemo
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2
+$ cd branchdemo/q
+bash: cd: branchdemo/q: No such file or directory
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2
+$ cd branchdemo/
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo
+$ git init
+Initialized empty Git repository in F:/devops-trainning/day2/branchdemo/.git/
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ touch f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ add f1.txt
+bash: add: command not found
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git
+Display all 63 possibilities? (y or n)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git add f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git commit -m 'added f1'
+[master (root-commit) acbb341] added f1
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git log
+commit acbb341870666e95c94394cedfae3443543cce35 (HEAD -> master)
+Author: rajeshistrac <rajesh.istrac@gmail.com>
+Date:   Fri Sep 20 10:38:40 2019 +0530
+
+    added f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git log -s
+commit acbb341870666e95c94394cedfae3443543cce35 (HEAD -> master)
+Author: rajeshistrac <rajesh.istrac@gmail.com>
+Date:   Fri Sep 20 10:38:40 2019 +0530
+
+    added f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git log --oneline
+acbb341 (HEAD -> master) added f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ touch f2.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git add f2.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git commit -m 'added f2'
+[master 7fb62c0] added f2
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f2.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git log --oneline
+7fb62c0 (HEAD -> master) added f2
+acbb341 added f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git branch feature
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git branch
+  feature
+* master
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ ls
+f1.txt  f2.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (feature)
+$ git branch
+* feature
+  master
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (feature)
+$ git log
+commit 7fb62c0091e8f8e225ad23342c68465c48b14a18 (HEAD -> feature, master)
+Author: rajeshistrac <rajesh.istrac@gmail.com>
+Date:   Fri Sep 20 10:42:46 2019 +0530
+
+    added f2
+
+commit acbb341870666e95c94394cedfae3443543cce35
+Author: rajeshistrac <rajesh.istrac@gmail.com>
+Date:   Fri Sep 20 10:38:40 2019 +0530
+
+    added f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (feature)
+$ git log --oneline
+7fb62c0 (HEAD -> feature, master) added f2
+acbb341 added f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (feature)
+$ touch f3.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (feature)
+$ git add f3.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (feature)
+$ git commit -m 'feature branch commit 1'
+[feature a1a25eb] feature branch commit 1
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f3.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (feature)
+$ git log --oneline
+a1a25eb (HEAD -> feature) feature branch commit 1
+7fb62c0 (master) added f2
+acbb341 added f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (feature)
+$ git checkout master
+Switched to branch 'master'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git log --oneline
+7fb62c0 (HEAD -> master) added f2
+acbb341 added f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (feature)
+$ git log --oneline
+a1a25eb (HEAD -> feature) feature branch commit 1
+7fb62c0 (master) added f2
+acbb341 added f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (feature)
+$ man awk
+bash: man: command not found
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (feature)
+$ awk
+Usage: awk [POSIX or GNU style options] -f progfile [--] file ...
+Usage: awk [POSIX or GNU style options] [--] 'program' file ...
+POSIX options:          GNU long options: (standard)
+        -f progfile             --file=progfile
+        -F fs                   --field-separator=fs
+        -v var=val              --assign=var=val
+Short options:          GNU long options: (extensions)
+        -b                      --characters-as-bytes
+        -c                      --traditional
+        -C                      --copyright
+        -d[file]                --dump-variables[=file]
+        -D[file]                --debug[=file]
+        -e 'program-text'       --source='program-text'
+        -E file                 --exec=file
+        -g                      --gen-pot
+        -h                      --help
+        -i includefile          --include=includefile
+        -l library              --load=library
+        -L[fatal|invalid]       --lint[=fatal|invalid]
+        -M                      --bignum
+        -N                      --use-lc-numeric
+        -n                      --non-decimal-data
+        -o[file]                --pretty-print[=file]
+        -O                      --optimize
+        -p[file]                --profile[=file]
+        -P                      --posix
+        -r                      --re-interval
+        -s                      --no-optimize
+        -S                      --sandbox
+        -t                      --lint-old
+        -V                      --version
+
+To report bugs, see node `Bugs' in `gawk.info'
+which is section `Reporting Problems and Bugs' in the
+printed version.  This same information may be found at
+https://www.gnu.org/software/gawk/manual/html_node/Bugs.html.
+PLEASE do NOT try to report bugs by posting in comp.lang.awk,
+or by using a web forum such as Stack Overflow.
+
+gawk is a pattern scanning and processing language.
+By default it reads standard input and writes standard output.
+
+Examples:
+        gawk '{ sum += $1 }; END { print sum }' file
+        gawk -F: '{ print $1 }' /etc/passwd
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (feature)
+$ sed
+Usage: sed [OPTION]... {script-only-if-no-other-script} [input-file]...
+
+  -n, --quiet, --silent
+                 suppress automatic printing of pattern space
+      --debug
+                 annotate program execution
+  -e script, --expression=script
+                 add the script to the commands to be executed
+  -f script-file, --file=script-file
+                 add the contents of script-file to the commands to be executed
+  --follow-symlinks
+                 follow symlinks when processing in place
+  -i[SUFFIX], --in-place[=SUFFIX]
+                 edit files in place (makes backup if SUFFIX supplied)
+  -b, --binary
+                 open files in binary mode (CR+LFs are not processed specially)
+  -l N, --line-length=N
+                 specify the desired line-wrap length for the `l' command
+  --posix
+                 disable all GNU extensions.
+  -E, -r, --regexp-extended
+                 use extended regular expressions in the script
+                 (for portability use POSIX -E).
+  -s, --separate
+                 consider files as separate rather than as a single,
+                 continuous long stream.
+      --sandbox
+                 operate in sandbox mode (disable e/r/w commands).
+  -u, --unbuffered
+                 load minimal amounts of data from the input files and flush
+                 the output buffers more often
+  -z, --null-data
+                 separate lines by NUL characters
+      --help     display this help and exit
+      --version  output version information and exit
+
+If no -e, --expression, -f, or --file option is given, then the first
+non-option argument is taken as the sed script to interpret.  All
+remaining arguments are names of input files; if no input files are
+specified, then the standard input is read.
+
+GNU sed home page: <https://www.gnu.org/software/sed/>.
+General help using GNU software: <https://www.gnu.org/gethelp/>.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (feature)
+$ git checkout master
+Switched to branch 'master'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git checkout feature
+Switched to branch 'feature'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (feature)
+$ git checkout master
+Switched to branch 'master'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git merge feature
+Updating 7fb62c0..a1a25eb
+Fast-forward
+ f3.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f3.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git log --oneline
+a1a25eb (HEAD -> master, feature) feature branch commit 1
+7fb62c0 added f2
+acbb341 added f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git branch
+  feature
+* master
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git branch hotfix
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git branch
+  feature
+  hotfix
+* master
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git checkout hotfix
+Switched to branch 'hotfix'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git branch
+  feature
+* hotfix
+  master
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git log --oneline
+a1a25eb (HEAD -> hotfix, master, feature) feature branch commit 1
+7fb62c0 added f2
+acbb341 added f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ touch f4.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git add f4.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ ls
+f1.txt  f2.txt  f3.txt  f4.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git commit -m '1st commit to hotfix'
+[hotfix aabedff] 1st commit to hotfix
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f4.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git log --oneline
+aabedff (HEAD -> hotfix) 1st commit to hotfix
+a1a25eb (master, feature) feature branch commit 1
+7fb62c0 added f2
+acbb341 added f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git checkout master
+Switched to branch 'master'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git checkout hotflix
+error: pathspec 'hotflix' did not match any file(s) known to git
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git checkout hotfix
+Switched to branch 'hotfix'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git merge hotfix
+Already up to date.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git log --oneline
+aabedff (HEAD -> hotfix) 1st commit to hotfix
+a1a25eb (master, feature) feature branch commit 1
+7fb62c0 added f2
+acbb341 added f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git checkout master
+Switched to branch 'master'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$
+
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$
+
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git commit -m '1st update to f1 in master'
+On branch master
+Changes not staged for commit:
+        modified:   f1.txt
+
+no changes added to commit
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git stage f1.txt
+warning: LF will be replaced by CRLF in f1.txt.
+The file will have its original line endings in your working directory
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git commit -m '1st update to f1 in master'
+[master b79fd83] 1st update to f1 in master
+ 1 file changed, 1 insertion(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git log --ne
+fatal: unrecognized argument: --ne
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git log --oneline
+b79fd83 (HEAD -> master) 1st update to f1 in master
+a1a25eb (feature) feature branch commit 1
+7fb62c0 added f2
+acbb341 added f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git checkout hotfix
+Switched to branch 'hotfix'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git stage f1.txt
+warning: LF will be replaced by CRLF in f1.txt.
+The file will have its original line endings in your working directory
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git commit -m '1st update to f1 in hotfix'
+[hotfix 2a18689] 1st update to f1 in hotfix
+ 1 file changed, 1 insertion(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git merge hotfix
+Already up to date.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git checkout master
+Switched to branch 'master'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git merge hotfix
+Auto-merging f1.txt
+CONFLICT (content): Merge conflict in f1.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master|MERGING)
+$ cat f1.txt
+<<<<<<< HEAD
+123
+=======
+456
+>>>>>>> hotfix
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master|MERGING)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master|MERGING)
+$ git checkout hotfix
+error: you need to resolve your current index first
+f1.txt: needs merge
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master|MERGING)
+$ git commit -m "testing"
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U       f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master|MERGING)
+$ git add f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master|MERGING)
+$ git commit -m "testing"
+[master be5ca19] testing
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ cat f1.txt
+<<<<<<< HEAD
+123
+=======
+456
+>>>>>>> hotfix
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git merge hotfix
+Already up to date.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git branch
+  feature
+  hotfix
+* master
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git checkout hotfix
+Switched to branch 'hotfix'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git push origin hotfix
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git checkout master
+Switched to branch 'master'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git push master
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream master master
+
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git remote add origin git@github.com:rajeshistrac/day2.git
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git push -u origin master
+Enumerating objects: 18, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (18/18), 1.44 KiB | 739.00 KiB/s, done.
+Total 18 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), done.
+To github.com:rajeshistrac/day2.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git branch br1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git checkout br1
+Switched to branch 'br1'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (br1)
+$ git log --oneline
+be5ca19 (HEAD -> br1, origin/master, master) testing
+2a18689 (hotfix) 1st update to f1 in hotfix
+b79fd83 1st update to f1 in master
+aabedff 1st commit to hotfix
+a1a25eb (feature) feature branch commit 1
+7fb62c0 added f2
+acbb341 added f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (br1)
+$ touch f5.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (br1)
+$ git ad f5.txt
+git: 'ad' is not a git command. See 'git --help'.
+
+The most similar commands are
+        add
+        am
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (br1)
+$ git add f5.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (br1)
+$ git log --oneline
+be5ca19 (HEAD -> br1, origin/master, master) testing
+2a18689 (hotfix) 1st update to f1 in hotfix
+b79fd83 1st update to f1 in master
+aabedff 1st commit to hotfix
+a1a25eb (feature) feature branch commit 1
+7fb62c0 added f2
+acbb341 added f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (br1)
+$ git checkout hotfix
+Switched to branch 'hotfix'
+A       f5.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git push origin hotfix
+Total 0 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'hotfix' on GitHub by visiting:
+remote:      https://github.com/rajeshistrac/day2/pull/new/hotfix
+remote:
+To github.com:rajeshistrac/day2.git
+ * [new branch]      hotfix -> hotfix
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git checkout master
+Switched to branch 'master'
+A       f5.txt
+Your branch is up to date with 'origin/master'.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git push origin hotfix
+Everything up-to-date
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git push origin feature
+Total 0 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'feature' on GitHub by visiting:
+remote:      https://github.com/rajeshistrac/day2/pull/new/feature
+remote:
+To github.com:rajeshistrac/day2.git
+ * [new branch]      feature -> feature
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git checkout hotfix
+Switched to branch 'hotfix'
+A       f5.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git push origin master
+Everything up-to-date
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git status
+On branch hotfix
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   f5.txt
+
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ vi f5.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git stage f5.txt
+warning: LF will be replaced by CRLF in f5.txt.
+The file will have its original line endings in your working directory
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git commit -m "updating f5"
+[hotfix 2d6347e] updating f5
+ 1 file changed, 1 insertion(+)
+ create mode 100644 f5.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git push
+fatal: The current branch hotfix has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin hotfix
+
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git push -u origin master
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git checkout hotfix
+Switched to branch 'hotfix'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git push
+fatal: The current branch hotfix has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin hotfix
+
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git push -u origin master
+Everything up-to-date
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git push
+fatal: The current branch hotfix has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin hotfix
+
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git push --help
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git push origin --all
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 267 bytes | 267.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:rajeshistrac/day2.git
+   2a18689..2d6347e  hotfix -> hotfix
+ * [new branch]      br1 -> br1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git status
+On branch hotfix
+nothing to commit, working tree clean
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ ll
+total 2
+-rw-r--r-- 1 Administrator 197121 5 Sep 20 12:02 f1.txt
+-rw-r--r-- 1 Administrator 197121 0 Sep 20 10:42 f2.txt
+-rw-r--r-- 1 Administrator 197121 0 Sep 20 10:52 f3.txt
+-rw-r--r-- 1 Administrator 197121 0 Sep 20 11:10 f4.txt
+-rw-r--r-- 1 Administrator 197121 5 Sep 20 12:02 f5.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ cat f1.txt
+456
+789
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git restore f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ cat f1.txt
+456
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ cat f1.txt
+456
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git commit -m 'updating f1'
+On branch hotfix
+Changes not staged for commit:
+        modified:   f1.txt
+
+no changes added to commit
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git commit -m 'updating f1'
+On branch hotfix
+Changes not staged for commit:
+        modified:   f1.txt
+
+no changes added to commit
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ cat f1.txt
+456
+789
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git reset f1.txt
+Unstaged changes after reset:
+M       f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ cat f1.txt
+456
+789
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git reset head ~1
+Unstaged changes after reset:
+M       f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ cat f1.txt
+456
+789
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$
+
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git commit -m 'updating f1'
+On branch hotfix
+Changes not staged for commit:
+        modified:   f1.txt
+
+no changes added to commit
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git reset head ~1
+Unstaged changes after reset:
+M       f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ cat f1.txt
+456
+789
+123
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git reset head ~`2
+> ^C
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git reset head ~2
+Unstaged changes after reset:
+M       f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ cat f1.txt
+456
+789
+123
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git reset head~2
+Unstaged changes after reset:
+M       f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ cat f1.txt
+456
+789
+123
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git reset HEAD~2
+Unstaged changes after reset:
+M       f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ cat f1.txt
+456
+789
+123
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git reset head~1
+Unstaged changes after reset:
+M       f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git reset --hard head~1
+fatal: ambiguous argument 'head~1': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git reset --hard head~2
+fatal: ambiguous argument 'head~2': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git reset --hard head~1
+fatal: ambiguous argument 'head~1': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git commit -m 'updating f1 1'
+On branch hotfix
+Changes not staged for commit:
+        modified:   f1.txt
+
+Untracked files:
+        f2.txt
+        f3.txt
+        f4.txt
+        f5.txt
+
+no changes added to commit
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git reset head~1
+fatal: ambiguous argument 'head~1': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git reset --hard head~1
+fatal: ambiguous argument 'head~1': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git reset --hard HEAD~1
+fatal: ambiguous argument 'HEAD~1': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ vi f2.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git commit -am 'f2 c1'
+[hotfix ad24344] f2 c1
+ 1 file changed, 4 insertions(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ vi f2.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git commit -am 'f2 c2'
+On branch hotfix
+Untracked files:
+        f2.txt
+        f3.txt
+        f4.txt
+        f5.txt
+
+nothing added to commit but untracked files present
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git reset HEAD~1
+Unstaged changes after reset:
+M       f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ cat f2.txt
+123
+456
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git reset --hard HEAD~1
+fatal: ambiguous argument 'HEAD~1': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git reset --hard HEAD~2
+fatal: ambiguous argument 'HEAD~2': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git add f2.txt
+warning: LF will be replaced by CRLF in f2.txt.
+The file will have its original line endings in your working directory
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git stage f2.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ vi f2.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git commit -am 'f2 c3'
+warning: LF will be replaced by CRLF in f2.txt.
+The file will have its original line endings in your working directory
+[hotfix b4918fb] f2 c3
+ 2 files changed, 7 insertions(+)
+ create mode 100644 f2.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git reset --hard HEAD~1
+HEAD is now at acbb341 added f1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ cat f2.txt
+cat: f2.txt: No such file or directory
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ ls
+f1.txt  f3.txt  f4.txt  f5.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git checkout
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git checkout master
+error: The following untracked working tree files would be overwritten by checkout:
+        f3.txt
+        f4.txt
+Please move or remove them before you switch branches.
+Aborting
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ ls
+f1.txt  f3.txt  f4.txt  f5.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ vi f2.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git commit -am 'f2 c1'
+On branch hotfix
+Untracked files:
+        f2.txt
+        f3.txt
+        f4.txt
+        f5.txt
+
+nothing added to commit but untracked files present
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ vi f2.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git commit -am 'f2 c2'
+On branch hotfix
+Untracked files:
+        f2.txt
+        f3.txt
+        f4.txt
+        f5.txt
+
+nothing added to commit but untracked files present
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ vi f2.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git commit -am 'f2 c3'
+On branch hotfix
+Untracked files:
+        f2.txt
+        f3.txt
+        f4.txt
+        f5.txt
+
+nothing added to commit but untracked files present
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git reset HEAD~1
+fatal: ambiguous argument 'HEAD~1': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git restore f2.txt
+error: pathspec 'f2.txt' did not match any file(s) known to git
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git push origin --all
+To github.com:rajeshistrac/day2.git
+ ! [rejected]        hotfix -> hotfix (non-fast-forward)
+error: failed to push some refs to 'git@github.com:rajeshistrac/day2.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git checkout master
+error: The following untracked working tree files would be overwritten by checkout:
+        f2.txt
+        f3.txt
+        f4.txt
+Please move or remove them before you switch branches.
+Aborting
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ rm -f f2.txt f3.txt f4.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (hotfix)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ ls
+f1.txt  f2.txt  f3.txt  f4.txt  f5.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ vi f2.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ vi f2.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ vi f2.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git commit -am 'f2 c1'
+warning: LF will be replaced by CRLF in f2.txt.
+The file will have its original line endings in your working directory
+[master 575dd56] f2 c1
+ 1 file changed, 1 insertion(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ vi f2.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git commit -am 'f2 c2'
+warning: LF will be replaced by CRLF in f2.txt.
+The file will have its original line endings in your working directory
+[master fa9975b] f2 c2
+ 1 file changed, 1 insertion(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ vi f2.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git commit -am 'f2 c3'
+warning: LF will be replaced by CRLF in f2.txt.
+The file will have its original line endings in your working directory
+[master 628df36] f2 c3
+ 1 file changed, 1 insertion(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git reset --hard HEAD~1
+HEAD is now at fa9975b f2 c2
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ cat f2.txt
+123
+456
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git push origin --all
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 563 bytes | 563.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To github.com:rajeshistrac/day2.git
+   be5ca19..fa9975b  master -> master
+ ! [rejected]        hotfix -> hotfix (non-fast-forward)
+error: failed to push some refs to 'git@github.com:rajeshistrac/day2.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git push origin master
+Everything up-to-date
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git revert master
+[master 88bac4f] Revert "f2 c2"
+ 1 file changed, 1 deletion(-)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ cat f2.txt
+123
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 321 bytes | 321.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:rajeshistrac/day2.git
+   fa9975b..88bac4f  master -> master
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/branchdemo (master)
+$ cd ..
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2
+$ mkdir revertdemo
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2
+$ cd revertdemo/
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo
+$ git commit -am 'f1 c1'
+fatal: not a git repository (or any of the parent directories): .git
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo
+$ git init
+Initialized empty Git repository in F:/devops-trainning/day2/revertdemo/.git/
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -am 'f1 c1'
+On branch master
+
+Initial commit
+
+Untracked files:
+        f1.txt
+
+nothing added to commit but untracked files present
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -am 'f1 c2'
+On branch master
+
+Initial commit
+
+Untracked files:
+        f1.txt
+
+nothing added to commit but untracked files present
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -am 'f1 c3'
+On branch master
+
+Initial commit
+
+Untracked files:
+        f1.txt
+
+nothing added to commit but untracked files present
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -am 'f1 c4'
+On branch master
+
+Initial commit
+
+Untracked files:
+        f1.txt
+
+nothing added to commit but untracked files present
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git log --oneline
+fatal: your current branch 'master' does not have any commits yet
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git add f1.txt
+warning: LF will be replaced by CRLF in f1.txt.
+The file will have its original line endings in your working directory
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -am 'f1 c1'
+warning: LF will be replaced by CRLF in f1.txt.
+The file will have its original line endings in your working directory
+[master (root-commit) 6a15b5f] f1 c1
+ 1 file changed, 5 insertions(+)
+ create mode 100644 f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -am 'f1 c2'
+warning: LF will be replaced by CRLF in f1.txt.
+The file will have its original line endings in your working directory
+[master cd75032] f1 c2
+ 1 file changed, 1 insertion(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -am 'f1 c4'
+warning: LF will be replaced by CRLF in f1.txt.
+The file will have its original line endings in your working directory
+[master 349aa5e] f1 c4
+ 1 file changed, 1 insertion(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -am 'f1 c4'
+warning: LF will be replaced by CRLF in f1.txt.
+The file will have its original line endings in your working directory
+[master a98fbb9] f1 c4
+ 1 file changed, 1 insertion(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git log --oneline
+a98fbb9 (HEAD -> master) f1 c4
+349aa5e f1 c4
+cd75032 f1 c2
+6a15b5f f1 c1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git revert HEAD
+[master 4f94cc5] Revert "f1 c4"
+ 1 file changed, 1 deletion(-)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ cat f1.txt
+line 1
+line 2
+line 3
+line 4
+line 5
+line 6
+line 7
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git log --oneline
+4f94cc5 (HEAD -> master) Revert "f1 c4"
+a98fbb9 f1 c4
+349aa5e f1 c4
+cd75032 f1 c2
+6a15b5f f1 c1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git revert HEAD
+[master 528b643] Revert "Revert "f1 c4""
+ 1 file changed, 1 insertion(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ cat f1.txt
+line 1
+line 2
+line 3
+line 4
+line 5
+line 6
+line 7
+line 8
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git revert cd75032
+error: could not revert cd75032... f1 c2
+hint: after resolving the conflicts, mark the corrected paths
+hint: with 'git add <paths>' or 'git rm <paths>'
+hint: and commit the result with 'git commit'
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master|REVERTING)
+$ cat f1.txt
+line 1
+line 2
+line 3
+line 4
+line 5
+<<<<<<< HEAD
+line 6
+line 7
+line 8
+=======
+>>>>>>> parent of cd75032... f1 c2
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master|REVERTING)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master|REVERTING)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master|REVERTING)
+$ git status
+On branch master
+You are currently reverting commit cd75032.
+  (fix conflicts and run "git revert --continue")
+  (use "git revert --abort" to cancel the revert operation)
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   f1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master|REVERTING)
+$ git log --oneline
+528b643 (HEAD -> master) Revert "Revert "f1 c4""
+4f94cc5 Revert "f1 c4"
+a98fbb9 f1 c4
+349aa5e f1 c4
+cd75032 f1 c2
+6a15b5f f1 c1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master|REVERTING)
+$ git commit -am 'f1 c1'
+[master 2f8385e] f1 c1
+ 1 file changed, 7 deletions(-)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -am 'c1'
+On branch master
+nothing to commit, working tree clean
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -am 'c1'
+On branch master
+nothing to commit, working tree clean
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git log --oneline
+2f8385e (HEAD -> master) f1 c1
+528b643 Revert "Revert "f1 c4""
+4f94cc5 Revert "f1 c4"
+a98fbb9 f1 c4
+349aa5e f1 c4
+cd75032 f1 c2
+6a15b5f f1 c1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -am 'c2'
+[master 1ac7f5f] c2
+ 1 file changed, 1 insertion(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -am 'c3'
+[master f63f5e3] c3
+ 1 file changed, 1 insertion(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ vi f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -am 'c4'
+[master 59a3d5c] c4
+ 1 file changed, 1 insertion(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ cat f1.txt
+line 1
+line 2
+line 3
+line 4
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git revert HEAD
+[master 3e3c52d] Revert "c4"
+ 1 file changed, 1 deletion(-)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ cat f1.txt
+line 1
+line 2
+line 3
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git revert HEAD
+[master 472f76a] Revert "Revert "c4""
+ 1 file changed, 1 insertion(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ cat f1.txt
+line 1
+line 2
+line 3
+line 4
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ echo "line 5" >> f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git log --oneline
+472f76a (HEAD -> master) Revert "Revert "c4""
+3e3c52d Revert "c4"
+59a3d5c c4
+f63f5e3 c3
+1ac7f5f c2
+2f8385e f1 c1
+528b643 Revert "Revert "f1 c4""
+4f94cc5 Revert "f1 c4"
+a98fbb9 f1 c4
+349aa5e f1 c4
+cd75032 f1 c2
+6a15b5f f1 c1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git reset --soft f63f5e3
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ cat f1.txt
+line 1
+line 2
+line 3
+line 4
+line 5
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   f1.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   f1.txt
+
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -m "Added line 5"
+[master 27c2602] Added line 5
+ 1 file changed, 1 insertion(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ echo "line 6" >> f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -m "Added line 6"
+On branch master
+Changes not staged for commit:
+        modified:   f1.txt
+
+no changes added to commit
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git stage f1.txt
+warning: LF will be replaced by CRLF in f1.txt.
+The file will have its original line endings in your working directory
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -m "Added line 6"
+[master 7499ade] Added line 6
+ 1 file changed, 2 insertions(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git log --oneline
+7499ade (HEAD -> master) Added line 6
+27c2602 Added line 5
+f63f5e3 c3
+1ac7f5f c2
+2f8385e f1 c1
+528b643 Revert "Revert "f1 c4""
+4f94cc5 Revert "f1 c4"
+a98fbb9 f1 c4
+349aa5e f1 c4
+cd75032 f1 c2
+6a15b5f f1 c1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git reset --soft 1ac7f5f
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ cat f1.txt
+line 1
+line 2
+line 3
+line 4
+line 5
+line 6
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git revert 1ac7f5f
+error: your local changes would be overwritten by revert.
+hint: commit your changes or stash them to proceed.
+fatal: revert failed
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git revert 1ac7f5f master
+error: your local changes would be overwritten by revert.
+hint: commit your changes or stash them to proceed.
+fatal: revert failed
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master|REVERTING)
+$ git revert master
+error: your local changes would be overwritten by revert.
+hint: commit your changes or stash them to proceed.
+fatal: revert failed
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master|REVERTING)
+$ git status
+On branch master
+Revert currently in progress.
+  (run "git revert --continue" to continue)
+  (use "git revert --abort" to cancel the revert operation)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   f1.txt
+
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master|REVERTING)
+$ cat f1.txt
+line 1
+line 2
+line 3
+line 4
+line 5
+line 6
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master|REVERTING)
+$ git commit -m "Aded 6line"
+[master 0fb2942] Aded 6line
+ 1 file changed, 4 insertions(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master|REVERTING)
+$ git status
+On branch master
+Revert currently in progress.
+  (run "git revert --continue" to continue)
+  (use "git revert --abort" to cancel the revert operation)
+
+nothing to commit, working tree clean
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master|REVERTING)
+$ git revert master
+[master a174d6d] Revert "Aded 6line"
+ 1 file changed, 4 deletions(-)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master|REVERTING)
+$ cat f1.txt
+line 1
+line 2
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master|REVERTING)
+$ git status
+On branch master
+Revert currently in progress.
+  (run "git revert --continue" to continue)
+  (use "git revert --abort" to cancel the revert operation)
+
+nothing to commit, working tree clean
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master|REVERTING)
+$ "git revert --abort
+> ^C
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master|REVERTING)
+$ git revert --abort
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ pwd
+/f/devops-trainning/day2/revertdemo
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ echo file7 >> file7.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git add file7.txt
+warning: LF will be replaced by CRLF in file7.txt.
+The file will have its original line endings in your working directory
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ cat file7.txt
+file7
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file7.txt
+
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -m "gkls"
+[master f466c86] gkls
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file7.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git log --oneline
+f466c86 (HEAD -> master) gkls
+1ac7f5f c2
+2f8385e f1 c1
+528b643 Revert "Revert "f1 c4""
+4f94cc5 Revert "f1 c4"
+a98fbb9 f1 c4
+349aa5e f1 c4
+cd75032 f1 c2
+6a15b5f f1 c1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ echo line >> file7.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ cat file7.txt
+file7
+line
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -m "cns""
+>
+> ^C
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -m "cns"
+On branch master
+Changes not staged for commit:
+        modified:   file7.txt
+
+no changes added to commit
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git stage file7.txt
+warning: LF will be replaced by CRLF in file7.txt.
+The file will have its original line endings in your working directory
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -m "cns"
+[master 7889890] cns
+ 1 file changed, 1 insertion(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git log --oneline
+7889890 (HEAD -> master) cns
+f466c86 gkls
+1ac7f5f c2
+2f8385e f1 c1
+528b643 Revert "Revert "f1 c4""
+4f94cc5 Revert "f1 c4"
+a98fbb9 f1 c4
+349aa5e f1 c4
+cd75032 f1 c2
+6a15b5f f1 c1
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git reset --soft f466c86
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ cat f1.txt
+line 1
+line 2
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ cat file7.txt
+file7
+line
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ echo line3 >> file7.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git statys
+git: 'statys' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file7.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file7.txt
+
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git commit -m "3rd line added"
+[master 83032d3] 3rd line added
+ 1 file changed, 1 insertion(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git reset --hard f466c86
+HEAD is now at f466c86 gkls
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ cat file7.txt
+file7
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ git clone git@github.com:rajeshistrac/testrepo-1.git
+Cloning into 'testrepo-1'...
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 8 (delta 0), reused 8 (delta 0), pack-reused 0
+Receiving objects: 100% (8/8), done.
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ pwd
+/f/devops-trainning/day2/revertdemo
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ ls -lrth
+total 2.0K
+-rw-r--r-- 1 Administrator 197121 16 Sep 20 14:09 f1.txt
+-rw-r--r-- 1 Administrator 197121  7 Sep 20 14:18 file7.txt
+drwxr-xr-x 1 Administrator 197121  0 Sep 20 14:25 testrepo-1/
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo (master)
+$ cd testrepo-1/
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo/testrepo-1 (master)
+$ ls -lrth
+total 1.0K
+-rw-r--r-- 1 Administrator 197121  0 Sep 20 14:25 f2.txt
+-rw-r--r-- 1 Administrator 197121 20 Sep 20 14:25 f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo/testrepo-1 (master)
+$ git init
+Reinitialized existing Git repository in F:/devops-trainning/day2/revertdemo/testrepo-1/.git/
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo/testrepo-1 (master)
+$ echo isue-fized >> f1.txt
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo/testrepo-1 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   f1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo/testrepo-1 (master)
+$ git commit -m "Fixed"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+        modified:   f1.txt
+
+no changes added to commit
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo/testrepo-1 (master)
+$ git add f1.txt
+warning: LF will be replaced by CRLF in f1.txt.
+The file will have its original line endings in your working directory
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo/testrepo-1 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   f1.txt
+
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo/testrepo-1 (master)
+$ git commit -m "Fixed"
+[master 677734b] Fixed
+ 1 file changed, 1 insertion(+)
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo/testrepo-1 (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 290 bytes | 290.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:rajeshistrac/testrepo-1.git
+   94e5583..677734b  master -> master
+
+Administrator@ISTRAC-HP MINGW32 /f/devops-trainning/day2/revertdemo/testrepo-1 (master)
+$
